@@ -1,0 +1,42 @@
+﻿@model MVC_definitivo.Models.AnimesModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AnimesModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Protagonista)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Protagonista)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Episodios)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Episodios)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lançamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lançamento)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

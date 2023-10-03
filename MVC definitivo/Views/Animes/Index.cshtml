@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MVC_definitivo.Models.AnimesModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Protagonista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Episodios)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lançamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Protagonista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Episodios)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lançamento)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = (Model as List<AnimesModel>).IndexOf(item) }) |
+                @Html.ActionLink("Details", "Details", new { id = (Model as List<AnimesModel>).IndexOf(item) }) |
+                @Html.ActionLink("Delete", "Delete", new { id = (Model as List<AnimesModel>).IndexOf(item) }) |
+                @Html.ActionLink("Create", "Create", new { id = (Model as List<AnimesModel>).IndexOf(item) })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
